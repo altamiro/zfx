@@ -1,0 +1,22 @@
+<?php
+$objGrid = $this->dataGrid();	
+$objGrid->addColumn( $this->translate( 'lCodigo' ) , array( 'width' => '80px' , 'style' => 'text-align:center' ) );
+$objGrid->addColumn( $this->translate( 'lNome' ) , array( 'style' => 'text-align:center' ) );
+$objGrid->addColumn( $this->translate( 'lApelido' ) , array( 'style' => 'text-align:center' ) );
+$objGrid->addColumn( '&nbsp;' , array( 'width' => '80px' , 'style' => 'text-align:center' ) );
+
+foreach( $this->paginator as $i => $objResult )
+{
+	
+	$arrAction = array( 'editar' => array( 'url' => $this->baseUrl() . '/contato/edit/' . $objResult->co_contato , 
+										   'label' => $this->translate( 'lBEditar' ) , 
+										   'icon' => 'icon-pencil' ) );
+
+	$objGrid->addRow( $objResult->co_contato , array( 'style' => 'text-align:center' ) );
+	$objGrid->addRow( $objResult->no_contato );
+	$objGrid->addRow( $objResult->no_apelido );
+	$objGrid->addRow( $this->actionGrid( $arrAction ) );
+	$objGrid->setTr();
+}
+
+echo $objGrid->show();

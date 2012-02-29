@@ -1,0 +1,6 @@
+.zfx_carregando {
+    background: url(../img/ajax-loader.gif) no-repeat center !important;
+    width: 210px;
+    height: 19px;
+    display: block;
+}

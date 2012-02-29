@@ -1,0 +1,23 @@
+# @author : Altamiro Rodrigues
+# @description : Arquivo de configuracao dos routes da aplicacao
+# Ex.: 
+# produto:
+#     @url: 'teste/:id'
+#     @module: 'default'
+#     @controller: 'teste'
+#     @action: 'index'
+#     @params: { id: valor default }
+
+contato_new:
+    url: 'contato/new'
+    module: 'default'
+    controller: 'contato'
+    action: 'formulario'
+    params: { co_contato: 0 }
+
+contato_edit:
+    url: 'contato/edit/:co_contato'
+    module: 'default'
+    controller: 'contato'
+    action: 'formulario'
+    params: { co_contato: 0 }

@@ -1,0 +1,44 @@
+<?php echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+	<?php
+		echo "\n" . $this->headMeta();
+		echo "\n" . $this->headTitle( $this->translate( "zfx_titulo" ) );
+		echo "\n" . $this->headLink();
+		echo "\n" . $this->headScript();
+	?>
+</head>
+<body>
+	
+	<div class="container">
+
+		<div style="height:200px"></div>
+
+		<div class="row">
+		  <div class="span12">
+		    <?php
+				if ( count( $this->messages ) > 0 ) 
+				{ 
+					printf("<div class='alert alert-info' id='flash'>%s</div>", $this->messages[0]); 
+				}
+			?>
+			&nbsp;
+		    <div class="row">
+				<div class="span4">&nbsp;</div>
+				<div class="span4">
+					 <?php echo $this->layout()->content ?>
+				</div>
+				<div class="span4">&nbsp;</div>
+		    </div>
+		  </div>
+		</div>
+
+	</div>
+
+</body>
+</html>

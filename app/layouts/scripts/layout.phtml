@@ -1,0 +1,73 @@
+<?php echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+	<?php
+		echo "\n" . $this->headMeta();
+		echo "\n" . $this->headTitle( $this->translate( "zfx_titulo" ) );
+		echo "\n" . $this->headLink();
+		echo "\n" . $this->headScript();
+	?>
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+<!-- Navbar
+    ================================================== -->
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<a class="brand" href="<?php echo $this->baseUrl(); ?>" title="<?php echo $this->translate( 'zfx_titulo' ); ?>"><?php echo $this->translate( 'zfx_titulo' ); ?></a>
+			
+		<div class="nav-collapse">
+		  <ul class="nav pull-right">
+		  	<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="<?php echo $this->auth->no_usuario; ?>"><i class="icon-user icon-white"></i> <?php echo $this->auth->no_usuario; ?><b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="<?php echo $this->baseUrl() . '/usuario/mudar-senha/' . $this->auth->co_usuario; ?>" title="<?php echo $this->translate( 'lmenu_trocar_senha' ); ?>"><?php echo $this->translate( 'lmenu_trocar_senha' ); ?></a></li>
+              </ul>
+            </li>
+		  	<li class="divider-vertical"></li>
+            <li><a href="<?php echo $this->baseUrl() . '/login/sair'; ?>" title="<?php echo $this->translate( 'lSair' ); ?>"><?php echo $this->translate( 'lSair' ); ?></a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+
+		</div>
+	</div>
+</div>
+<br /><br />
+	<div class="container">
+		<?php
+			if ( count( $this->messages ) > 0 ) 
+			{
+				if ( isset( $this->messages[ 0 ][ 'error' ] ) )
+				{
+					printf("<div class='alert alert-error' id='flash'>%s</div>", $this->messages[0][ 'error' ]); 
+				}
+				else if ( isset( $this->messages[ 0 ][ 'sucess' ] ) )
+				{
+					printf("<div class='alert alert-success' id='flash'>%s</div>", $this->messages[ 0 ][ 'sucess' ]); 
+				}
+				else if ( isset( $this->messages[ 0 ][ 'info' ] ) )
+				{
+					printf("<div class='alert alert-info' id='flash'>%s</div>", $this->messages[ 0 ][ 'info' ]); 
+				}
+				else
+				{
+					printf("<div class='alert alert-block' id='flash'>%s</div>", $this->messages[0]);
+				} // end iF;
+			} // end iF;
+		?>
+	    <?php echo $this->layout()->content ?>
+	</div>
+
+</body>
+</html>

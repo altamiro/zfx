@@ -1,0 +1,13 @@
+production:
+
+  params:
+   adapter: Pdo_Mysql
+   host: localhost
+   port: 3306
+   database: zfx_db
+   username: zfx
+   password: 1234
+   encoding: utf8
+
+development:
+  _extends: production

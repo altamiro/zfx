@@ -1,0 +1,12 @@
+production:
+
+  parameters:
+    charset: UTF-8
+    locale: pt_BR
+    translate:
+      adapter: tmx
+    baseUrl: /zfx/
+    cache_limit: (86400*7) # 24horas 7200 
+
+development:
+  _extends: production

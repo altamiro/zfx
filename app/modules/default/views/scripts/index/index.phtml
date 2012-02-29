@@ -1,0 +1,59 @@
+<span>&nbsp;</span>
+
+<ul class="breadcrumb">
+  <li>
+    <h3><?php echo $this->translate( 'lTelaContato' ); ?></h3>
+  </li>
+</ul>
+
+<a class="btn btn-small" href="javascript:;" data-toggle="collapse" data-target="#div-pesquisa" title="<?php echo $this->translate( 'lPesquisar' ); ?>">
+	<i class="icon-search"></i> <?php echo $this->translate( 'lPesquisar' ); ?>
+</a>
+
+<a class="btn btn-small btn-info" href="<?php echo $this->baseUrl() . '/contato/new' ?>" title="<?php echo $this->translate( 'lBNovo' ); ?>">
+	<i class="icon-cog icon-white"></i> <?php echo $this->translate( 'lBNovo' ); ?>
+</a>
+
+<div id="div-pesquisa" class="collapse">
+	<p>
+		<form id="frmPesquisar" name="frmPesquisar" method="post" action="javascript:;" class="well form-inline">
+			<?php
+
+				echo $this->formHidden( "data[contato][hid_order]" , 'co_filial ASC' , array( 'id' => 'hid_order' ) );
+
+				echo $this->formSelect( 'data[contato][tipo_pesquisa]' , '' , 
+										array( 'id' => 'contato_tipo_pesquisa' , 
+											   'class' => 'span2' ) , 
+										array( 'co_contato'		=>	$this->translate( 'lCodigo' ) , 
+											   'no_contato'		=>	$this->translate( 'lNome' ) , 
+											   'no_apelido'		=>	$this->translate( 'lApelido' ) ) );
+			?>
+			<?php
+				echo $this->formText( 'data[contato][texto_pesquisado]' , 
+									  '' , 
+									  array( 'id' => 'contato_texto_pesquisado' , 
+											 'class' => 'input-xxlarge' ) );
+			?>
+			<?php 
+				echo $this->formButton( 'btn-Entrar' , 
+										$this->translate( 'lBBuscar' ) , 
+										array( 'class' => 'btn' , 'type' => 'submit' ) ); 
+			?>
+		</form>
+	</p>
+</div>
+
+<p>
+<div id="div-listar">	
+</div>
+</p>
+
+<?php
+	$this->jsAdd( 'modules/contato' );
+?>
+
+<script type="text/javascript">
+$(document).ready(function($) {
+	Contato.init();
+} );
+</script>

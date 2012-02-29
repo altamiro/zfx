@@ -1,0 +1,47 @@
+<span>&nbsp;</span>
+
+<ul class="breadcrumb">
+  <li>
+    <h3><?php echo $this->translate( 'lFormularioContato' ); ?> <small><a href="<?php echo $this->baseUrl() . '/'; ?>" title="<?php echo $this->translate( 'lBVoltar' ); ?>">&laquo; <?php echo $this->translate( 'lBVoltar' ); ?></a></small></h3>
+  </li>
+</ul>
+
+<form class="form-horizontal" id="frmCadastro" name="frmCadastro" action="<?php echo $this->baseUrl() . '/contato/salvar'; ?>" method="post">
+
+<?php
+	echo $this->formHidden( 'data[contato][co_contato]' , $this->data->co_contato , array( 'id' => 'contato_co_contato' ) );
+	echo $this->formHidden( 'data[contato][co_usuario]' , $this->auth->co_usuario , array( 'id' => 'contato_co_usuario' ) );
+?>
+
+<fieldset>
+  <div class="control-group">
+    <label class="control-label" for="contato_no_contato"><?php echo $this->translate( 'lNome' ); ?></label>
+    <div class="controls">
+      <?php echo $this->formText( 'data[contato][no_contato]' , $this->data->no_contato , array( 'id' => 'contato_no_contato' , 
+																	'class' => 'input-xlarge focused' ) ); ?>
+    </div>
+  </div>
+  <div class="control-group">
+  	<label class="control-label" for="contato_no_apelido"><?php echo $this->translate( 'lApelido' ); ?></label>
+    <div class="controls">
+      <?php echo $this->formText( 'data[contato][no_apelido]' , $this->data->no_apelido , array( 'id' => 'contato_no_apelido' , 
+																	'class' => 'input-xlarge focused' ) ); ?>
+    </div>
+  </div>
+  
+  <div class="form-actions">
+	<?php 
+		echo $this->formButton( 'btn-salvar' , 
+		 					    $this->translate( 'lBSalvar' ) , 
+								array( 'class' => 'btn btn-primary' , 
+										'type' => 'submit' ) ); 
+	?>
+	<?php 
+		echo $this->formButton( 'btn-cancelar' , 
+								$this->translate( 'lBCancelar' ) , 
+								array( 'class' => 'btn btn-danger' , 
+									   'type' => 'reset' ) ); 
+	?>
+  </div>
+</fieldset>
+</form>

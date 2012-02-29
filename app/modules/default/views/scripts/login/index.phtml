@@ -1,0 +1,18 @@
+<form class="well" id="frmLogin" name="frmLogin" action="<?php echo $this->url( array( 'action' => 'auth' ) ); ?>" method="post">
+
+<div class='input-prepend'>
+	<span class="add-on"><i class="icon-envelope"></i></span>
+	<?php echo $this->formText( 'data[usuario][ds_email]' , '' , array( 'id' => 'usuario_ds_email' , 
+																	'class' => 'input-large' , 
+																	'placeholder' => $this->translate( 'lEmail' ) ) ); ?>
+</div>
+
+<div class='input-prepend'>
+	<span class="add-on"><i class="icon-lock"></i></span>
+	<?php echo $this->formPassword( 'data[usuario][ds_senha]' , '' , array( 'id' => 'usuario_ds_senha' , 
+																		'class' => 'input-large' , 
+																		'placeholder' => $this->translate( 'lSenha' ) ) ); ?>
+</div>
+
+<?php echo $this->formButton( 'btn-Entrar' , $this->translate( 'lBAcessar' ) , array( 'class' => 'btn btn-primary' , 'type' => 'submit' ) ); ?>
+</form>

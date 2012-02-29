@@ -1,0 +1,160 @@
+{
+	"production" : {
+
+		"phpSettings" : {
+
+			"session" : {
+				"cache_expire" : 60 ,
+				"cookie_httponly" : true ,
+				"use_only_cooki" : true
+			} ,
+
+			"date" : {
+				"timezone" : "America/Sao_Paulo"
+			},
+
+			"display_startup_errors" : false,
+			"display_errors" : false , 
+			"default_charset" : "APP_CONF_PARAMETERS_CHARSET"
+		} , 
+
+		"autoloadernamespaces" : {
+			"Intrax" : "Intrax" , 
+			"Models" : "Models" , 
+			"Business" : "Business"
+		} , 
+
+		"pluginPaths" : {} , 
+
+		"includePaths" : {
+			"libs" : "LIBRARY_PATH"
+		} , 
+
+		"bootstrap" : {
+			"path" : "APPLICATION_PATH/Bootstrap.php" , 
+			"class" : "Bootstrap"
+		} , 
+
+		"appnamespace" : "App" , 
+
+		"resources" : {
+
+			"db" : {
+				"adapter" : "DB_PARAMS_ADAPTER" , 
+				"isDefaultTableAdapter" : true , 
+				"params" : {
+					"host" : "DB_PARAMS_HOST" , 
+					"port" : "DB_PARAMS_PORT" , 
+					"dbname" : "DB_PARAMS_DATABASE" , 
+					"username" : "DB_PARAMS_USERNAME" , 
+					"password" : "DB_PARAMS_PASSWORD" , 
+					"charset" : "DB_PARAMS_ENCODING" , 
+					"persistent" : true 
+				}
+			} , 
+
+			"frontController" : {
+				"moduleDirectory" : "MODULES_PATH" , 
+				"moduleControllerDirectoryName" : "controllers" , 
+				"defaultControllerName" : "index" , 
+				"defaultAction" : "index" , 
+				"defaultModule" : "default" , 
+				"baseurl" : "APP_CONF_PARAMETERS_BASEURL" , 
+				"env" : "APPLICATION_ENV" , 
+				"params" : {
+					"prefixdefaultmodule" : true , 
+					"displayExceptions" : false 
+				} ,
+				"plugins" : {
+					"i18n" : "\\Intrax\\Controller\\Plugin\\I18n" ,
+					"viewSetup" : "\\Intrax\\Controller\\Plugin\\ViewSetup"
+				} 
+			} , 
+
+			"modules" : [] , 
+
+			"view" : {
+                "doctype" : "HTML5" , 
+                "encoding" : "APP_CONF_PARAMETERS_CHARSET"
+			} , 
+
+			"log" : {
+                "stream" : {
+                    "writerName" : "Stream" ,
+                    "writerParams" : {
+                            "stream" : "LOG_PATH/app.xml" , 
+                            "mode" : "a"
+                        } , 
+                    "formatterName" : "Xml"
+                }
+            } , 
+
+			"layout" : {
+				"layout" : "layout" , 
+				"layoutPath" : "LAYOUT_PATH"
+			} , 
+
+			"locale" : {
+				"default" : "APP_CONF_PARAMETERS_LOCALE"
+			}
+
+		} , 
+        
+		"languages" : {
+			"supported" : {
+				"pt_BR" : "pt_BR" , 
+				"en_US" : "en_US"
+			}
+		} ,
+        
+		"cache" : {
+			"frontend" : {
+				"name" : "Core" , 
+				"options" : {
+					"lifetime" : "APP_CONF_PARAMETERS_CACHE_LIMIT" , 
+					"automatic_serialization" : true
+				}
+			} , 
+			"backend" : {
+				"name" : "File" , 
+				"options" : {
+					"cache_dir" : "CACHE_PATH"
+				}
+			}
+		}
+
+	} , 
+
+	"testing" : {
+		"_extends" : "production" , 
+
+		"phpSettings" : {
+			"display_startup_errors" : true ,
+			"display_errors" : true
+		}
+
+	} , 
+
+	"development" : {
+		"_extends" : "production" , 
+
+		"phpSettings" : {
+			"display_startup_errors" : true ,
+			"display_errors" : true
+		} ,
+
+		"resources" : {
+
+			"db" : {
+				"params" : {
+					"profiler" : {
+						"enabled" : true ,
+						"class" : "Zend_Db_Profiler_Firebug"
+					}
+				}
+			}
+
+		}
+
+	}
+}

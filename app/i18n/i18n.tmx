@@ -1,0 +1,174 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+<header creationtoolversion="1.0.0" datatype="winres" segtype="sentence" adminlang="pt_BR" srclang="en_US" o-tmf="abc" creationtool="Eclipse">
+</header>
+<body>
+
+	<tu tuid='zfx_titulo'>
+		<tuv xml:lang="pt_BR"><seg>ZFX :: Aplicação(Exemplo)</seg></tuv>
+		<tuv xml:lang="en_US"><seg>ZFX :: Application(Example)</seg></tuv>
+	</tu>
+
+	<tu tuid='lTelaContato'>
+		<tuv xml:lang="pt_BR"><seg>Lista de Contato</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Contact List</seg></tuv>
+	</tu>
+
+	<tu tuid='lFormularioContato'>
+		<tuv xml:lang="pt_BR"><seg>Contato - Formulário de Cadastro</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Contact - Registration Form</seg></tuv>
+	</tu>
+
+	<tu tuid='lmenu_trocar_senha'>
+		<tuv xml:lang="pt_BR"><seg>Trocar Senha</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Change Password</seg></tuv>
+	</tu>
+
+	<tu tuid='lPesquisar'>
+		<tuv xml:lang="pt_BR"><seg>Pesquisa Avançada</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Advanced Search</seg></tuv>
+	</tu>
+
+	<tu tuid='lCodigo'>
+		<tuv xml:lang="pt_BR"><seg>Código</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Id</seg></tuv>
+	</tu>
+
+	<tu tuid='lNome'>
+		<tuv xml:lang="pt_BR"><seg>Nome</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Name</seg></tuv>
+	</tu>
+
+	<tu tuid='lApelido'>
+		<tuv xml:lang="pt_BR"><seg>Apelido</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Nickname</seg></tuv>
+	</tu>
+
+	<tu tuid='lEmail'>
+		<tuv xml:lang="pt_BR"><seg>E-mail</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Mail</seg></tuv>
+	</tu>
+
+	<tu tuid='lSenha'>
+		<tuv xml:lang="pt_BR"><seg>Senha</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Password</seg></tuv>
+	</tu>
+
+	<tu tuid='lDataCadastro'>
+		<tuv xml:lang="pt_BR"><seg>Data de Cadastro</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Date of Registration</seg></tuv>
+	</tu>
+
+	<tu tuid='lDataAlteracao'>
+		<tuv xml:lang="pt_BR"><seg>Data de Cadastro</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Date of Amendment</seg></tuv>
+	</tu>
+
+	<tu tuid='lTipoTelefoneCelular'>
+		<tuv xml:lang="pt_BR"><seg>Celular</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Cellular</seg></tuv>
+	</tu>
+
+	<tu tuid='lSair'>
+		<tuv xml:lang="pt_BR"><seg>Sair</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Exit</seg></tuv>
+	</tu>
+
+	<tu tuid='lBNovo'>
+		<tuv xml:lang="pt_BR"><seg>Novo</seg></tuv>
+		<tuv xml:lang="en_US"><seg>New</seg></tuv>
+	</tu>
+
+	<tu tuid='lAcao'>
+		<tuv xml:lang="pt_BR"><seg>Ação</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Action</seg></tuv>
+	</tu>
+
+	<tu tuid='lBEditar'>
+		<tuv xml:lang="pt_BR"><seg>Editar</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Edit</seg></tuv>
+	</tu>
+
+	<tu tuid='lBExcluir'>
+		<tuv xml:lang="pt_BR"><seg>Excluir</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Delete</seg></tuv>
+	</tu>
+
+	<tu tuid='lBBuscar'>
+		<tuv xml:lang="pt_BR"><seg>Buscar</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Search</seg></tuv>
+	</tu>
+
+	<tu tuid='lBVoltar'>
+		<tuv xml:lang="pt_BR"><seg>voltar</seg></tuv>
+		<tuv xml:lang="en_US"><seg>return</seg></tuv>
+	</tu>
+
+	<tu tuid='lTipoTelefoneFixo'>
+		<tuv xml:lang="pt_BR"><seg>Fixo</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Fixed</seg></tuv>
+	</tu>
+
+	<tu tuid='lBSalvar'>
+		<tuv xml:lang="pt_BR"><seg>Salvar</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Save</seg></tuv>
+	</tu>
+
+	<tu tuid='lBCancelar'>
+		<tuv xml:lang="pt_BR"><seg>Cancelar</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Cancel</seg></tuv>
+	</tu>
+
+	<tu tuid='lBAcessar'>
+		<tuv xml:lang="pt_BR"><seg>Acessar</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Access</seg></tuv>
+	</tu>
+
+	<tu tuid='MlBAcessar'>
+		<tuv xml:lang="pt_BR"><seg>Acessar</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Access</seg></tuv>
+	</tu>
+
+	<tu tuid='usuario-invalido'>
+		<tuv xml:lang="pt_BR"><seg>Usuário ou Senha Inválido</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Invalid User or Password</seg></tuv>
+	</tu>
+
+	<tu tuid='usuario-inativo'>
+		<tuv xml:lang="pt_BR"><seg>Usuário inativo ou não autorizado pelo administrador do sistema.</seg></tuv>
+		<tuv xml:lang="en_US"><seg>User inactive or not authorized by the system administrator.</seg></tuv>
+	</tu>
+
+	<tu tuid='registro-cadastro'>
+		<tuv xml:lang="pt_BR"><seg>Registro cadastrado com sucesso.</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Registration successfully.</seg></tuv>
+	</tu>
+
+	<tu tuid='registro-atualizado'>
+		<tuv xml:lang="pt_BR"><seg>Registro atualizado com sucesso.</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Record updated successfully.</seg></tuv>
+	</tu>
+
+	<tu tuid='registro-erro'>
+		<tuv xml:lang="pt_BR"><seg>Houve um erro no registro.</seg></tuv>
+		<tuv xml:lang="en_US"><seg>There was an error in the record.</seg></tuv>
+	</tu>
+
+	<tu tuid='registro-excluido'>
+		<tuv xml:lang="pt_BR"><seg>Registro excluido com sucesso.</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Registration successfully excluded.</seg></tuv>
+	</tu>
+
+	<tu tuid='registro-excluir-erro'>
+		<tuv xml:lang="pt_BR"><seg>Ocorreu um erro ao tentar excluir o registro.</seg></tuv>
+		<tuv xml:lang="en_US"><seg>An error occurred while trying to delete the record.</seg></tuv>
+	</tu>
+
+	<tu tuid='sessao-encerrada'>
+		<tuv xml:lang="pt_BR"><seg>Obrigado por usar o sistema.</seg></tuv>
+		<tuv xml:lang="en_US"><seg>Thank you for using the system.</seg></tuv>
+	</tu>
+
+</body>
+</tmx>

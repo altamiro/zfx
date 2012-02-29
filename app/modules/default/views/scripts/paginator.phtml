@@ -1,0 +1,189 @@
+<?php if ( $this->pageCount ) : ?>
+
+<!-- div pagination -->
+<div class="pagination">
+	<div style="float: right" class="div-registro">
+		<small>
+			<strong>Registro(s): <?php echo $this->firstItemNumber; ?> a <?php echo $this->lastItemNumber; ?> de <?php echo $this->totalItemCount; ?>
+
+			&nbsp;|&nbsp;
+		
+		P&aacute;gina</strong> 
+		
+		<select id="paginationControlItem<?php echo $this->partial()->view->div_id; ?>" 
+				name="paginationControlItem<?php echo $this->partial()->view->div_id; ?>" 
+				class="selectpagination" 
+				style="cursor:pointer" 
+				title="P&aacute;gina"
+				onchange="mudarPaginaDataGrid( '<?php echo $this->partial()->view->div_id; ?>' , 
+											   this.value , 
+											   '<?php echo $this->partial()->view->frmName; ?>' , 
+											   '<?php echo $this->partial()->view->dataType; ?>' );">
+											   
+		<?php 
+			
+			for ( $x = 1; $x <= $this->pageCount ; $x++ ) :
+			 
+			$selected = ( $x == $this->current ) ? ' selected="selected"' : ''; 
+		?>
+		  
+		  <option title="<?php echo "P&aacute;gina " . $x; ?>" value="<?php echo $this->url( array( 'page' => $x ) ); ?>"<?php echo $selected; ?>>
+				<?php echo $x; ?>
+		  </option>
+		  
+		<?php endfor; # end for. ?>
+		
+		</select> 
+		
+		<strong>de <?php echo $this->pageCount; ?>&nbsp;</strong>
+		
+		<select id="paginationItemCountItem<?php echo $this->partial()->view->div_id; ?>" 
+				name="paginationItemCountItem<?php echo $this->partial()->view->div_id; ?>" 
+				class="selectpagination" 
+				style="cursor:pointer" 
+				title="Registro(s) por P&aacute;gina"
+				onchange="mudarPaginaDataGrid( '<?php echo $this->partial()->view->div_id; ?>' , 
+											   this.value , 
+											   '<?php echo $this->partial()->view->frmName; ?>' , 
+											   '<?php echo $this->partial()->view->dataType; ?>' );">
+		<option title="20 Registro(s) por P&aacute;gina" value="<?php echo $this->url( array( 'list' => '25' ) );?>">20</option>
+		<option title="30 Registro(s) por P&aacute;gina" value="<?php echo $this->url( array( 'list' => '50' ) );?>" selected>30</option>
+		<option title="50 Registro(s) por P&aacute;gina" value="<?php echo $this->url( array( 'list' => '75' ) );?>">50</option>
+		<option title="100 Registro(s) por P&aacute;gina" value="<?php echo $this->url( array( 'list' => '100' ) );?>">100</option>
+		
+		</select>
+
+		</small>
+	</div>
+
+	<div style="float: left">
+		<ul>
+
+			<!-- First page link -->
+		<?php if ( isset( $this->previous ) ) : ?>
+		  <li>
+		  	<a title="Primeira" 
+		  	   href="javascript:;" 
+		  	   onClick="mudarPaginaDataGrid( '<?php echo $this->partial()->view->div_id; ?>' , 
+		  	   								 '<?php echo $this->url( array( 'page' => $this->first ) ); ?>' , 
+		  	   								 '<?php echo $this->partial()->view->frmName; ?>' , 
+		  	   								 '<?php echo $this->partial()->view->dataType; ?>' );" >
+		  		&laquo;&laquo;
+		  	</a>
+		  </li>
+		<?php else: ?>
+		  <li class="disabled">
+		  	<a>
+		  		&laquo;&laquo;
+		  	</a>
+		  </li>
+		<?php endif; # end iF. ?>
+
+		<!-- Previous page link -->
+		<?php if ( isset( $this->previous ) ) : ?>
+		  <li>
+		  	<a title="Anterior" 
+		  	   href="javascript:;" 
+		  	   onClick="mudarPaginaDataGrid( '<?php echo $this->partial()->view->div_id; ?>' , 
+		  	   								 '<?php echo $this->url( array( 'page' => $this->previous ) ); ?>' , 
+		  	   								 '<?php echo $this->partial()->view->frmName; ?>' , 
+		  	   								 '<?php echo $this->partial()->view->dataType; ?>' );" >
+		  		&laquo;
+		  	</a>
+		  </li>
+		<?php else: ?>
+		  <li class="disabled">
+		  	<a>
+		  		&laquo;
+		  	</a>
+		  </li>
+		<?php endif; # end iF. ?>
+
+          <!-- Numbered page links -->
+		<?php 
+
+			foreach ( $this->pagesInRange as $int => $page ) : 
+
+				if ( $page != $this->current ): 
+		?>
+		<li>
+			<a title="P&aacute;gina <?php echo $page?>" 
+			   href="javascript:;" 
+			   onClick="mudarPaginaDataGrid( '<?php echo $this->partial()->view->div_id; ?>' , 
+											 '<?php echo $this->url( array( 'page' => $page ) ); ?>' , 
+											 '<?php echo $this->partial()->view->frmName; ?>' , 
+											 '<?php echo $this->partial()->view->dataType; ?>' );" >
+				<?php echo $page; ?>
+			</a>
+		</li>
+		<?php else: ?>
+		<li class="active">
+			<a title="P&aacute;gina <?php echo $page?>" >
+				<?php echo $page; ?>
+			</a>
+		</li>
+		<?php
+		 
+				endif; # end iF
+				
+			endforeach;  # end foreach
+		?>
+		 <!-- end Numbered page links -->
+
+		 <!-- Next page link -->
+		<?php if ( isset( $this->next ) ) : ?>
+		  <li>
+		  	<a title="Pr&oacute;xima" 
+		  	   href="javascript:;" 
+		  	   onClick="mudarPaginaDataGrid( '<?php echo $this->partial()->view->div_id; ?>' , 
+		  	   								 '<?php echo $this->url( array( 'page' => $this->next ) ); ?>' , 
+		  	   								 '<?php echo $this->partial()->view->frmName; ?>' , 
+		  	   								 '<?php echo $this->partial()->view->dataType; ?>' );" >
+		  		&raquo;
+		  	</a>
+		  </li>
+		<?php else: ?>
+		  <li class="disabled">
+		  	<a>
+		  		&raquo;
+		  	</a>
+		  </li>
+		<?php endif; # end iF. ?>
+
+		<!-- Last page link -->
+		<?php if ( isset( $this->next ) ) : ?>
+		  <li>
+		  	<a title="&Uacute;ltima" 
+		  	   class="prevnext" 
+		  	   href="javascript:;" 
+		  	   onClick="mudarPaginaDataGrid( '<?php echo $this->partial()->view->div_id; ?>' , 
+											 '<?php echo $this->url( array( 'page' => $this->last ) ); ?>' , 
+											 '<?php echo $this->partial()->view->frmName; ?>' , 
+											 '<?php echo $this->partial()->view->dataType; ?>' );" >
+		  		&raquo;&raquo;
+		  	</a>
+		  </li>
+		<?php else: ?>
+		  <li class="disabled">
+		  	<a>
+				&raquo;&raquo;
+			</a>
+		  </li>
+		<?php endif; # end iF. ?>
+
+        </ul>
+	</div>
+
+</div>
+<!-- end div pagination -->
+
+<script type="text/javascript">
+
+$(document).ready( function() 
+{
+	$( "#paginationItemCountItem<?php echo $this->partial()->view->div_id; ?>" ).val( '<?php echo $this->itemCountPerPage; ?>' );
+});
+
+</script>
+
+<?php endif; ?>

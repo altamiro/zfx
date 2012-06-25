@@ -40,7 +40,7 @@ class ActionGrid extends HelperAbstract {
 
 			$strLi .= $value[ 'label' ];
 
-			$strLi .= '<li>';
+			$strLi .= '</a><li>';
 			$strLi .= "\n";
 		} // end foreach;
 
